@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Mansa Technical Test backend part",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kronx12/MansaTT.git"
+  },
+  "keywords": [],
+  "author": "Guillaume BAUD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kronx12/MansaTT/issues"
+  },
+  "homepage": "https://github.com/Kronx12/MansaTT#readme",
+  "dependencies": {
+    "fastify": "^4.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.8.4"
+  }
+}
