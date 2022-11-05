@@ -4,8 +4,9 @@
   "description": "Mansa Technical Test backend part",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "start": "node ./dist/index.js"
+    "start": "tsc -p tsconfig.json && node dist/index.js",
+    "start:dev": "nodemon",
+    "test": "jest --watch ./tests"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,16 @@
   },
   "homepage": "https://github.com/Kronx12/MansaTT#readme",
   "dependencies": {
-    "fastify": "^4.9.2"
+    "@types/jest": "^29.2.2",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2",
+    "fastify-plugin": "^4.3.0",
+    "jest": "^29.2.2",
+    "ts-jest": "^29.0.3"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "nodemon": "^2.0.20",
     "typescript": "^4.8.4"
   }
 }
