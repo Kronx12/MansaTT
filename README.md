@@ -64,5 +64,5 @@ Show us your skills even if some of these practices seem overkill for such a sma
 ## Possible improvements:
 - Use a versioning system for the database
 - Separate ```users``` table definition into .sql files
-- Improve email validation regex
+- Improve email and password validation regex
 - Use of dependency injection
