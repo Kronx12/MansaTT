@@ -1,13 +1,20 @@
-import fastify, { FastifyInstance } from "fastify";
-import { Server, IncomingMessage, ServerResponse } from "http";
-import { HealthRoute } from "./routes/health-route";
+import fastify from "fastify";
+import { initDatabase } from "./database/connection";
+import { healthz } from "./routes/healthz-route";
+import { register } from "./routes/register-route";
+import { login } from "./routes/login-route";
 
-const app: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify();
+export const build = (opts = {}): Promise<any> => {
+    return new Promise(resolve => {
+        initDatabase().then(r => {
+            const app = fastify(opts);
 
-function build() {
-    app.route(HealthRoute);
+            app.register(healthz);
+            app.register(register);
+            app.register(login);
 
-    return app;
+            resolve(app);
+        });
+    })
 }
 
-export default build;

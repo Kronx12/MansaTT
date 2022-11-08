@@ -1,13 +1,27 @@
-import App from "../src/app";
+import { build as appBuilder } from "../src/app";
+import "dotenv/config";
+import {connection} from "../src/database/connection";
+import {User} from "../src/models/user-model";
+import {registerUser} from "../src/services/user-service";
 
 export function build() {
-    const app = App();
+    process.env.APP_ENV = "test";
 
-    beforeAll(async () => {
-        await app.ready();
-    });
+    return appBuilder();
+}
 
-    afterAll(() => app.close());
+// User table manipulation
+export const mockedUser = User.fromObject({
+    name: "username",
+    email: "email@email",
+    password: "password"
+})
 
-    return app;
+export async function clearUsersTable() {
+    await connection!("users").del();
+}
+
+export async function resetUsersTable() {
+    await clearUsersTable();
+    await registerUser(mockedUser);
 }

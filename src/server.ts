@@ -1,15 +1,11 @@
-import App from './app'
+import { build } from './app'
+import 'dotenv/config';
 
 const PORT: any = process.env.APP_PORT || 3000;
-const fastify = App();
 
-const start = async () => {
-    try {
-        await fastify.listen({ port: PORT });
-    } catch (err) {
-        fastify.log.error(err);
+build().then(app => app.listen({ port: PORT }, (err: any, address: any) => {
+    if (err) {
+        app.log.error(err);
         process.exit(1);
     }
-}
-
-start();
+}));
