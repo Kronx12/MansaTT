@@ -1,4 +1,4 @@
-import knex, {Knex} from "knex";
+import knex, { Knex } from "knex";
 import 'dotenv/config';
 
 export let connection: Knex | null = null;

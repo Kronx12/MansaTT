@@ -1,6 +1,6 @@
-import {build, clearUsersTable, mockedUser, resetUsersTable} from "../../helpers";
-import {registerUser} from "../../../src/services/user-service";
-import {ApiErrors} from "../../../src/enums/api-errors";
+import { build, clearUsersTable, mockedUser, resetUsersTable } from "../../helpers";
+import { registerUser } from "../../../src/services/user-service";
+import { ApiErrors } from "../../../src/enums/api-errors";
 
 let app: any;
 

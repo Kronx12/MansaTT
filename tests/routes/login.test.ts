@@ -1,4 +1,4 @@
-import {build, resetUsersTable} from "../helpers";
+import { build, resetUsersTable } from "../helpers";
 import { ApiErrors } from "../../src/enums/api-errors";
 
 let app: any;

@@ -1,5 +1,5 @@
-import {apiResponseBuilder} from "../../src/utils/response-builder";
-import {ApiErrors} from "../../src/enums/api-errors";
+import { apiResponseBuilder } from "../../src/utils/response-builder";
+import { ApiErrors } from "../../src/enums/api-errors";
 
 describe("utils/response-builder/apiResponseBuilder", () => {
     test("default 500 response", async () => {

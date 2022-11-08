@@ -1,8 +1,8 @@
 import { build as appBuilder } from "../src/app";
+import { connection } from "../src/database/connection";
+import { User } from "../src/models/user-model";
+import { registerUser } from "../src/services/user-service";
 import "dotenv/config";
-import {connection} from "../src/database/connection";
-import {User} from "../src/models/user-model";
-import {registerUser} from "../src/services/user-service";
 
 export function build() {
     process.env.APP_ENV = "test";
